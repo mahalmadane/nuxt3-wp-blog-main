@@ -10,11 +10,16 @@ export default defineNuxtConfig({
       meta: [{ name: "description", content: "Elon's awesome blog" }],
     },
   },
-  modules: ["@nuxtjs/tailwindcss"],
+  modules: ["@nuxtjs/tailwindcss",'nuxt-icon'],
   
   runtimeConfig: {
     public: {
       wpUri: process.env.WP_URI,
     },
   },
+  vite: {
+    define: {
+      'process.env.DEBUG': 'false'
+    }
+  }
 });
