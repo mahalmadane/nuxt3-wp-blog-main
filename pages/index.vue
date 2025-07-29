@@ -32,40 +32,7 @@ const formatDate = (dateString: string) => {
 <template>
   <main class="bg-[#f5f5f5] min-h-screen">
     <!-- En-tête institutionnel -->
-    <header class="bg-gradient-to-r from-[#008080] to-[#008080] text-white py-12">
-      <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
-        <!-- Logo AGETIC -->
-        <div class="w-40 h-40 md:w-48 md:h-48 bg-white rounded-full p-2 mb-6 md:mb-0 md:mr-10 shadow-lg">
-          <img
-            src="/assets/images/logoAgetic.png"
-            alt="Logo AGETIC Mali"
-            class="w-full h-full object-contain"
-          />
-        </div>
-
-        <div class="text-center md:text-left">
-          <h1 class="text-2xl md:text-3xl font-bold mb-3">Agence des Technologies de l'Information et de la Communication</h1>
-          <p class="text-lg mb-4">Innovation numérique au service du développement du Mali</p>
-          <div class="flex flex-wrap justify-center md:justify-start gap-3">
-            <NuxtLink 
-              to="#actualites" 
-              class="bg-white text-[#008080] hover:bg-[#f5f5f5] px-5 py-2 rounded-lg font-medium flex items-center gap-1"
-            >
-              <Icon name="mdi:newspaper" class="text-lg" />
-              Actualités
-            </NuxtLink>
-            <a 
-              href="https://www.agetic.gov.ml" 
-              target="_blank"
-              class="border border-white hover:bg-white hover:text-[#008080] px-5 py-2 rounded-lg font-medium flex items-center gap-1"
-            >
-              <Icon name="mdi:web" class="text-lg" />
-              Site officiel
-            </a>
-          </div>
-        </div>
-      </div>
-    </header>
+    
 
     <!-- Section Actualités -->
     <section id="actualites" class="py-16 container mx-auto px-4">
