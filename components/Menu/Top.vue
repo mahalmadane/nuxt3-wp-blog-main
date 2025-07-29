@@ -86,7 +86,7 @@ onUnmounted(() => {
           </NuxtLink>
           
           <a
-            href="https://www.agetic.gov.ml"
+            href="https://agetic.gouv.ml/"
             target="_blank"
             rel="noopener noreferrer"
             class="ml-2 inline-flex items-center rounded-lg px-4 py-2 text-sm font-medium text-white bg-white/10 hover:bg-white/20 border border-white/30 transition-all"
@@ -168,7 +168,7 @@ onUnmounted(() => {
           </NuxtLink>
           
           <a
-            href="https://www.agetic.gov.ml"
+            href="https://agetic.gouv.ml/"
             target="_blank"
             rel="noopener noreferrer"
             class="block px-4 py-3 mt-2 text-white bg-white/10 hover:bg-white/20 border border-white/30 rounded-md transition-colors"
