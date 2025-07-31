@@ -1,224 +1,173 @@
 <script lang="ts" setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref } from 'vue'
 
 const applications = [
   {
     id: 1,
     name: "Plateforme e-Gouvernement",
-    description: "Digitalisation des services administratifs maliens",
-    category: "Administration",
-    logo: "/assets/images/apps/e-gov.png"
+    description: "Egesco » est une application web développée avec la technologie PHP combinée avec Oracle, servant au traitement des courriers arrivée et départ, qu'ils soient ordinaires ou confidentiels.",
+    category: "Gestion de courriers",
+    logo: "https://tse3.mm.bing.net/th/id/OIP.WTA-t9rQEWc0uCt4lfCNrAHaD-?rs=1&pid=ImgDetMain&o=7&rm=3",
+    features: [
+      "Signature électronique",
+      "Workflow automatisé",
+      "Gestion documentaire"
+    ]
   },
   {
     id: 2,
-    name: "mSanté Mali",
-    description: "Solution de santé mobile pour les citoyens",
-    category: "Santé",
-    logo: "/assets/images/apps/msante.png"
-  },
-  {
-    id: 3,
-    name: "EduMali",
-    description: "Plateforme éducative nationale en ligne",
-    category: "Éducation",
-    logo: "/assets/images/apps/edumali.png"
+    name: "AGIC",
+    description: "AGIC est un Système d'Archivage Electronique (SAE) qui permet aux entreprises de contrôler la production, le stockage, la gestion et la distribution de documents électroniques.",
+    category: "Archivage",
+    logo: "https://tse2.mm.bing.net/th/id/OIP.t6A0XDHn-FKI1aTLRyhn7QAAAA?rs=1&pid=ImgDetMain&o=7&rm=3",
+    features: [
+      "Carnet de santé numérique",
+      "Téléconsultation",
+      "Alertes médicales"
+    ]
   }
 ]
 
 const currentSlide = ref(0)
-let intervalId: NodeJS.Timeout
 
-// Transition douce en boucle infinie
 const nextSlide = () => {
   currentSlide.value = (currentSlide.value + 1) % applications.length
 }
 
+const prevSlide = () => {
+  currentSlide.value = (currentSlide.value - 1 + applications.length) % applications.length
+}
+
 const goToSlide = (index: number) => {
   currentSlide.value = index
-  resetInterval()
 }
-
-const startInterval = () => {
-  intervalId = setInterval(nextSlide, 3000) // Rotation toutes les 3 secondes
-}
-
-const resetInterval = () => {
-  clearInterval(intervalId)
-  startInterval()
-}
-
-onMounted(() => {
-  startInterval()
-})
-
-onUnmounted(() => {
-  clearInterval(intervalId)
-})
 </script>
 
 <template>
-  <div class="bg-gray-50">
-    <!-- Section À propos - Version Professionnelle -->
-<section class="relative py-16 bg-white overflow-hidden">
-  <div class="absolute inset-0 bg-gradient-to-b from-teal-50 to-white opacity-90"></div>
-  
-  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <!-- En-tête avec icône décorative -->
-    <div class="text-center">
-      <div class="inline-flex items-center justify-center bg-teal-100/20 rounded-full p-4 mb-6">
-        <svg class="h-10 w-10 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
-        </svg>
-      </div>
-      <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl lg:text-5xl">
-        <span class="block text-teal-600">L'AGETIC</span>
-        <span class="block font-medium text-gray-600 mt-2 text-xl sm:text-2xl">Pionnière du numérique malien</span>
-      </h2>
-    </div>
-
-    <!-- Contenu principal avec mise en page équilibrée -->
-    <div class="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24 items-center">
-      <!-- Texte descriptif -->
-      <div class="prose prose-lg text-gray-600 max-w-none">
-        <p>
-          <span class="font-semibold text-teal-600">L'Agence des Technologies de l'Information et de la Communication (AGETIC)</span> 
-          est l'institution phare du Mali pour l'innovation technologique au service du développement national.
-        </p>
-        
-        <p class="mt-4">
-          Créée pour <span class="text-gray-900 font-medium">accélérer la transformation digitale</span> du pays, 
-          nous concevons des plateformes stratégiques qui impactent positivement :
-        </p>
-        
-        <ul class="mt-6 space-y-3">
-          <li class="flex items-start">
-            <svg class="flex-shrink-0 h-5 w-5 text-teal-500 mt-0.5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-            </svg>
-            <span>L'administration publique (e-gouvernement)</span>
-          </li>
-          <li class="flex items-start">
-            <svg class="flex-shrink-0 h-5 w-5 text-teal-500 mt-0.5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-            </svg>
-            <span>Les services aux citoyens (santé, éducation)</span>
-          </li>
-          <li class="flex items-start">
-            <svg class="flex-shrink-0 h-5 w-5 text-teal-500 mt-0.5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-            </svg>
-            <span>L'économie numérique (startups, fintech)</span>
-          </li>
-        </ul>
-        
-        <p class="mt-6">
-          Notre approche combine <span class="text-gray-900 font-medium">expertise technique</span>, 
-          <span class="text-gray-900 font-medium">innovation locale</span> et 
-          <span class="text-gray-900 font-medium">partenariats stratégiques</span>.
-        </p>
-      </div>
-
-      <!-- Visuel accompagnateur -->
-      <div class="relative">
-        <div class="relative rounded-2xl shadow-xl overflow-hidden aspect-w-16 aspect-h-9">
-          <img 
-            src="/assets/images/logoAgetic.png" 
-            alt="Siège de l'AGETIC à Bamako"
-            class="object-cover w-full h-full"
-            loading="lazy"
-          >
-          <div class="absolute inset-0 bg-gradient-to-t from-teal-600/20 to-transparent"></div>
-        </div>
-        
-        <div class="mt-6 flex justify-center">
-          <NuxtLink 
-            to="/about" 
-            class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-teal-600 hover:bg-teal-700 transition-colors duration-200"
-          >
-            Découvrir notre histoire
-            <svg class="ml-3 -mr-1 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </NuxtLink>
-        </div>
-      </div>
-    </div>
-
-    <!-- Chiffres clés -->
-    <div class="mt-16 bg-teal-50 rounded-2xl p-8 sm:p-10">
-      <div class="grid grid-cols-2 gap-8 md:grid-cols-4">
+  <div class="min-h-screen bg-gray-50">
+    <!-- Section À propos -->
+    <section class="py-16 bg-white">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="text-center">
-          <div class="text-3xl font-bold text-teal-600 sm:text-4xl">15+</div>
-          <div class="mt-2 text-sm font-medium text-gray-600 uppercase tracking-wider">Applications</div>
-        </div>
-        <div class="text-center">
-          <div class="text-3xl font-bold text-teal-600 sm:text-4xl">50+</div>
-          <div class="mt-2 text-sm font-medium text-gray-600 uppercase tracking-wider">Experts</div>
-        </div>
-        <div class="text-center">
-          <div class="text-3xl font-bold text-teal-600 sm:text-4xl">1M+</div>
-          <div class="mt-2 text-sm font-medium text-gray-600 uppercase tracking-wider">Utilisateurs</div>
-        </div>
-        <div class="text-center">
-          <div class="text-3xl font-bold text-teal-600 sm:text-4xl">24/7</div>
-          <div class="mt-2 text-sm font-medium text-gray-600 uppercase tracking-wider">Support</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-    <!-- Section Applications -->
-    <section class="py-12">
-      <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-10">
-          <h2 class="text-2xl font-bold text-teal-600 sm:text-3xl">
-            Nos applications phares
-          </h2>
-          <p class="mt-3 text-gray-600 max-w-2xl mx-auto">
-            Découvrez nos solutions numériques au service du Mali
+          <div class="inline-flex items-center justify-center bg-teal-100 rounded-full p-3 mb-6">
+            <Icon name="mdi:government" class="h-8 w-8 text-teal-600" />
+          </div>
+          <h1 class="text-3xl font-bold text-teal-600 sm:text-4xl">
+            L'AGETIC en action
+          </h1>
+          <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+            Acteur majeur de la transformation numérique au Mali, l'AGETIC conçoit et déploie des solutions innovantes 
+            pour moderniser l'administration et améliorer les services aux citoyens.
           </p>
         </div>
 
-        <!-- Carrousel amélioré -->
-        <div class="relative overflow-hidden">
-          <!-- Conteneur des slides avec animation infinie -->
-          <div class="flex transition-transform duration-700 ease-in-out"
-            :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
-            <!-- Dupliquer les slides pour une boucle parfaite -->
-            <div v-for="(app, index) in [...applications, ...applications]" 
-                 :key="`${app.id}-${index}`"
-                 class="w-full flex-shrink-0 px-3">
-              <div class="bg-white rounded-lg shadow-sm p-5 h-full flex flex-col items-center text-center border border-gray-100">
-                <div class="bg-gray-50 rounded-lg p-3 mb-4 h-28 flex items-center justify-center">
-                  <img :src="app.logo" :alt="app.name" class="max-h-full max-w-full object-contain" loading="lazy">
+        <div class="mt-12 grid grid-cols-1 gap-8  md:grid-cols-3">
+  <div   v-for="(feature, index) in [
+    { title: 'Sécurité', text: 'Nos solutions garantissent la protection des données et la confidentialité' },
+    { title: 'Innovation', text: 'Nous développons des technologies adaptées aux besoins locaux' },
+    { title: 'Partenariats', text: 'Collaboration avec les acteurs publics et privés' }
+  ]" :key="index" class=" p-6 rounded-xl  border border-gray-100 transition-all hover:shadow-lg hover:shadow-teal-500/70 shadow-md shadow-teal-500/50 bg-tea-200" >
+    <div>
+      <h3 class="text-2xl  text-teal-600 font-bold">{{ feature.title }}</h3>
+      <p class="mt-1 text-gray-600">{{ feature.text }}</p>
+    </div>
+  </div>
+</div>
+      </div>
+    </section>
+
+    <!-- Section Applications -->
+    <section class="py-16 bg-gray-50">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h2 class="text-2xl font-bold text-teal-600 sm:text-3xl">
+            Nos réalisations phares
+          </h2>
+          <p class="mt-3 text-gray-600 max-w-2xl mx-auto">
+            Découvrez nos principales applications développées pour moderniser le Mali
+          </p>
+        </div>
+
+        <!-- Carrousel Manuel -->
+        <div class="mt-12 relative">
+          <!-- Conteneur des slides -->
+          <div class="relative overflow-hidden rounded-2xl">
+            <div class="flex transition-transform duration-500 ease-in-out"
+              :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
+              <div 
+                v-for="app in applications" 
+                :key="app.id"
+                class="w-full flex-shrink-0 px-4"
+              >
+                <div class="bg-white rounded-xl shadow-md overflow-hidden h-full">
+                  <div class="md:flex h-full">
+                    <!-- Partie Image -->
+                    <div class="md:w-2/5 bg-gray-50 flex items-center justify-center p-8">
+                      <img 
+                        :src="app.logo" 
+                        :alt="app.name" 
+                        class="max-h-48 object-contain"
+                        loading="lazy"
+                      >
+                    </div>
+                    
+                    <!-- Partie Contenu -->
+                    <div class="md:w-3/5 p-8 flex flex-col justify-between">
+                      <div>
+                        <span class="inline-block px-3 py-1 text-xs font-semibold text-teal-800 bg-teal-100 rounded-full mb-3">
+                          {{ app.category }}
+                        </span>
+                        <h3 class="text-xl font-bold text-gray-900">{{ app.name }}</h3>
+                        <p class="mt-3 text-gray-600">{{ app.description }}</p>
+                        
+                        
+                      </div>
+                      
+                      <div class="mt-8">
+                        <button 
+                          class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-teal-600 hover:bg-teal-700 transition-colors"
+                        >
+                          Voir le projet
+                          <Icon name="mdi:arrow-right" class="ml-2 h-4 w-4" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <span class="inline-block px-2 py-1 text-xs font-medium text-teal-800 bg-teal-50 rounded-full mb-2">
-                  {{ app.category }}
-                </span>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">{{ app.name }}</h3>
-                <p class="text-gray-600 text-sm mb-3">{{ app.description }}</p>
-                <button class="mt-auto text-sm font-medium text-teal-600 hover:text-teal-500">
-                  Découvrir →
-                </button>
               </div>
             </div>
           </div>
+
+          <!-- Navigation -->
+          <button 
+            @click="prevSlide"
+            class="absolute left-0 top-1/2 -translate-y-1/2 -ml-4 p-2 rounded-full bg-white shadow-md text-teal-600 hover:bg-teal-50 transition-colors z-10"
+            aria-label="Projet précédent"
+          >
+            <Icon name="mdi:chevron-left" class="h-6 w-6" />
+          </button>
           
+          <button 
+            @click="nextSlide"
+            class="absolute right-0 top-1/2 -translate-y-1/2 -mr-4 p-2 rounded-full bg-white shadow-md text-teal-600 hover:bg-teal-50 transition-colors z-10"
+            aria-label="Projet suivant"
+          >
+            <Icon name="mdi:chevron-right" class="h-6 w-6" />
+          </button>
+
           <!-- Indicateurs -->
-          <div class="flex justify-center mt-6 space-x-1.5">
-            <button v-for="(_, index) in applications" 
-                    :key="index"
-                    @click="goToSlide(index)"
-                    @mouseenter="resetInterval"
-                    @mouseleave="startInterval"
-                    class="w-2 h-2 rounded-full transition-all duration-300"
-                    :class="{
-                      'bg-teal-600 w-4': currentSlide % applications.length === index,
-                      'bg-gray-300': currentSlide % applications.length !== index
-                    }"
-                    aria-label="Aller au projet">
-            </button>
+          <div class="flex justify-center mt-6 space-x-2">
+            <button 
+              v-for="(_, index) in applications" 
+              :key="index"
+              @click="goToSlide(index)"
+              class="w-3 h-3 rounded-full transition-all duration-300"
+              :class="{
+                'bg-teal-600': currentSlide === index,
+                'bg-gray-300': currentSlide !== index
+              }"
+              aria-label="Aller au projet"
+            />
           </div>
         </div>
       </div>
@@ -232,8 +181,14 @@ onUnmounted(() => {
   transition-property: transform;
 }
 
-/* Optimisation de l'affichage */
-.bg-gray-50 {
-  background-color: #f9fafb;
+/* Style des cartes */
+.rounded-xl {
+  border-radius: 1rem;
+}
+
+/* Effet de survol amélioré */
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 128, 128, 0.2);
 }
 </style>
