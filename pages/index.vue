@@ -121,31 +121,7 @@ const formatDate = (dateString: string) => {
       </div>
     </section>
 
-    <!-- Section Newsletter -->
-    <section class="bg-[#f5f5f5] py-12">
-      <div class="container mx-auto px-4 max-w-4xl">
-        <div class="bg-white rounded-lg shadow-sm p-8 md:p-10 text-center">
-          <Icon name="mdi:email-newsletter" class="text-4xl text-[#008080] mb-4 mx-auto" />
-          <h3 class="text-2xl font-bold text-[#1a1a1a] mb-3">Abonnez-vous à notre newsletter</h3>
-          <p class="text-gray-600 mb-6">Recevez les dernières actualités de l'AGETIC directement dans votre boîte mail.</p>
-          
-          <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-            <input 
-              type="email" 
-              placeholder="Votre email professionnel" 
-              class="flex-grow px-4 py-3 rounded-lg border border-[#f5f5f5] focus:ring-2 focus:ring-[#008080] focus:border-transparent"
-              required
-            >
-            <button 
-              type="submit" 
-              class="bg-[#008080] hover:bg-[#006666] text-white px-6 py-3 rounded-lg font-medium whitespace-nowrap"
-            >
-              S'abonner
-            </button>
-          </form>
-        </div>
-      </div>
-    </section>
+    
   </main>
 </template>
 
