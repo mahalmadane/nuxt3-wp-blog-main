@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import colorGenerator from "~~/utils/colorGenerator";
-const baseUrl = "http://127.0.0.1:8000/ctg/categories/";
+const baseUrl = "/api/ctg/categories/";
 
 // Configuration du head de la page
 useHead({

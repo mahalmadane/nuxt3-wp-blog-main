@@ -8,8 +8,10 @@ useHead({
 
 // Récupération des articles avec useFetch
 const { data: blogs, pending, error, refresh } = await useFetch(
-  'http://127.0.0.1:8000/art/articles/?statue=publie&ordering=-created_at',
+  '/api/art/articles/?statue=publie&ordering=-created_at',
   {
+    lazy: true,
+    server: false,
     transform: (data: any[]) => {
       return data.map(article => ({
         ...article,

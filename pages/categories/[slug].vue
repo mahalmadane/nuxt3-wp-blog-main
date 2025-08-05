@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 const params = useRoute().params;
-const baseUrl = "http://127.0.0.1:8000/ctg/categories/";
+const baseUrl = "/api/ctg/categories/";
 
 const { data: categories, error } = await useFetch(`${baseUrl}?slug_ctg=${params.slug}`)
 if (!categories.value || categories.value.length === 0) {
@@ -14,7 +14,7 @@ const category = categories.value[0];
 
 // Récupération des articles
 const { data: posts, error: postsError } = await useFetch(
-  `http://127.0.0.1:8000/art/articles/?categorie__slug_ctg=${category.slug_ctg}`,
+  `/api/art/articles/?categorie__slug_ctg=${category.slug_ctg}`,
   {
     transform: (data: any[]) => {
       return data.map(article => ({

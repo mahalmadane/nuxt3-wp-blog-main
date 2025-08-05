@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 const params = useRoute().params;
 
-const { data: posts } = await useFetch(`http://127.0.0.1:8000/art/articles/?slug_article=${params.slug}`);
+const { data: posts } = await useFetch(`/api/art/articles/?slug_article=${params.slug}`);
 const post = posts?.value?.[0];
 
 const formatDate = (date: string) => {
