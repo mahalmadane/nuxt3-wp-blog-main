@@ -32,7 +32,7 @@ const formatDate = (dateString: string) => {
 <template>
   <main class="bg-[#f5f5f5] min-h-screen">
     <!-- En-tête institutionnel -->
-    
+    <HeroSlider />
 
     <!-- Section Actualités -->
     <section id="actualites" class="py-16 container mx-auto px-4">

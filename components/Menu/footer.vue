@@ -38,7 +38,7 @@ const footerLinks = [
           <div class="flex items-center space-x-3">
             <div class="flex-shrink-0 p-1 bg-white rounded-full shadow-sm">
               <img 
-                src="/assets/images/logoAgetic.png" 
+                src="/public/images/logoAgetic.png" 
                 alt="Logo AGETIC" 
                 class="h-10 w-auto"
                 loading="lazy"

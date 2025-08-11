@@ -59,7 +59,7 @@ onUnmounted(() => {
           <div class="flex-shrink-0 p-1 bg-white rounded-full shadow-sm">
             <img 
               class="h-8 w-auto" 
-              src="/assets/images/logoAgetic.png" 
+              src="/public/images/logoAgetic.png" 
               alt="Logo AGETIC"
               loading="lazy"
             >
