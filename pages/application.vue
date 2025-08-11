@@ -5,9 +5,9 @@ const applications = [
   {
     id: 1,
     name: "Plateforme e-Gouvernement",
-    description: "Egesco » est une application web développée avec la technologie PHP combinée avec Oracle, servant au traitement des courriers arrivée et départ, qu'ils soient ordinaires ou confidentiels.",
+    description: "Egesco est une application web développée avec la technologie PHP combinée avec Oracle, servant au traitement des courriers arrivée et départ, qu'ils soient ordinaires ou confidentiels.",
     category: "Gestion de courriers",
-    logo: "https://tse3.mm.bing.net/th/id/OIP.WTA-t9rQEWc0uCt4lfCNrAHaD-?rs=1&pid=ImgDetMain&o=7&rm=3",
+    logo: "/images/application/egesco.png",
     features: [
       "Signature électronique",
       "Workflow automatisé",
@@ -19,7 +19,43 @@ const applications = [
     name: "AGIC",
     description: "AGIC est un Système d'Archivage Electronique (SAE) qui permet aux entreprises de contrôler la production, le stockage, la gestion et la distribution de documents électroniques.",
     category: "Archivage",
-    logo: "https://tse2.mm.bing.net/th/id/OIP.t6A0XDHn-FKI1aTLRyhn7QAAAA?rs=1&pid=ImgDetMain&o=7&rm=3",
+    logo: "/images/application/agic.png",
+    features: [
+      "Carnet de santé numérique",
+      "Téléconsultation",
+      "Alertes médicales"
+    ]
+  },
+  {
+    id: 3,
+    name: "Office Manager",
+    description: " Office Manager est une application web sécurisée développée avec la technologie PHP combinée avec Oracle, composé de plusieurs modules.",
+    category: "ARessource Humaine",
+    logo: "/images/application/office.png",
+    features: [
+      "Carnet de santé numérique",
+      "Téléconsultation",
+      "Alertes médicales"
+    ]
+  },
+  {
+    id: 4,
+    name: "Core",
+    description: "Core Permet de créer et gérer un dossier d’appel d’offre de façon fiable et transparente Un outil de communication privé entre l’entreprise et ses prestataires/fournisseurs.",
+    category: "Marchés publics",
+    logo: "/images/application/core.jpeg",
+    features: [
+      "Carnet de santé numérique",
+      "Téléconsultation",
+      "Alertes médicales"
+    ]
+  },
+  {
+    id: 5,
+    name: "Demarche Administrative",
+    description: "Il s’agit de permettre aux usagers, à travers une version mobile d’accéder à l’information et aux démarches administratives.",
+    category: "Générale",
+    logo: "/images/application/demarche.jpeg",
     features: [
       "Carnet de santé numérique",
       "Téléconsultation",
@@ -161,7 +197,7 @@ const goToSlide = (index: number) => {
               v-for="(_, index) in applications" 
               :key="index"
               @click="goToSlide(index)"
-              class="w-3 h-3 rounded-full transition-all duration-300"
+              class="w-3 h-3 rounded-full transition-all duration-300 bg-black hover:bg-teal-800"
               :class="{
                 'bg-teal-600': currentSlide === index,
                 'bg-gray-300': currentSlide !== index

@@ -33,7 +33,9 @@ const formatDate = (dateString: string) => {
   <main class="bg-[#f5f5f5] min-h-screen">
     <!-- En-tête institutionnel -->
     <HeroSlider />
-
+    <GreenIntroSection />
+    <StatsKey />
+    <ImagesCards />
     <!-- Section Actualités -->
     <section id="actualites" class="py-16 container mx-auto px-4">
       <div class="text-center mb-12">
@@ -116,11 +118,14 @@ const formatDate = (dateString: string) => {
                 class="ml-1 group-hover:ml-2 transition-all" 
               />
             </NuxtLink>
+
+           
           </div>
         </article>
       </div>
     </section>
-
+            
+            
     
   </main>
 </template>
